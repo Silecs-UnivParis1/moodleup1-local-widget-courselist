@@ -1,10 +1,13 @@
 (function($){
     var rootUrl = $('script[src$="/courselist.js"]').attr('src').replace('/courselist.js', '/');
 
+	/**
     var scriptTag = document.createElement('script');
     scriptTag.setAttribute("type","text/javascript");
     scriptTag.setAttribute("src", rootUrl + '../jquery/jquery.dataTables.min.js');
     (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(scriptTag);
+    **/
+    
     var linkTag = document.createElement('link');
     linkTag.setAttribute("type","text/css");
     linkTag.setAttribute("rel","stylesheet");
