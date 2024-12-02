@@ -1,5 +1,7 @@
 (function($){
-    var rootUrl = $('script[src$="/courselist.js"]').attr('src').replace('/courselist.js', '/');
+    let jsUrl = $('script[src$="/courselist.js"]').attr('src');
+    let ind = jsUrl.lastIndexOf('/lib/javascript.php');
+    let rootUrl = jsUrl.substr(0, ind);
 
 	/**
     var scriptTag = document.createElement('script');
@@ -11,7 +13,7 @@
     var linkTag = document.createElement('link');
     linkTag.setAttribute("type","text/css");
     linkTag.setAttribute("rel","stylesheet");
-    linkTag.setAttribute("href", rootUrl + '../jquery/css/jquery.dataTables.css');
+    linkTag.setAttribute("href", rootUrl + '/local/jquery/css/jquery.dataTables.css');
     (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(linkTag);
 
     var defaultConfig = {
@@ -48,7 +50,7 @@
             config = defaultConfig;
         }
         $.ajax({
-            'url': rootUrl + 'list.php',
+            'url': rootUrl + '/local/widget_courselist/list.php',
             'type': 'GET',
             dataType: "jsonp",
             data: criteria
