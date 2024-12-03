@@ -36,7 +36,7 @@ function widget_courselist_query($format, $criteria, $visible=true) {
             $criteria->search = '';
         }
 
-        $courses = get_courses_batch_search($criteria, "c.fullname ASC", 0, 9999, $totalcount);
+        $courses = get_courses_batch_search($criteria, $totalcount, "c.fullname ASC", 0, 9999);
     }
 
     if (empty($courses)) {
